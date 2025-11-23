@@ -34,3 +34,18 @@ Move        ← Rule "Move" 0 ParseRule "B368/S245"
 HexLife     ← Rule "HexLife" 0 ParseRule "B2/S34H"
 BriansBrain ← Rule "Brian's Brain" 0 ParseRule "B2/S/G3"
 StarWars    ← Rule "Star Wars" 0 ParseRule "B2/S345/G4"
+
+RLEAlpha ↚ ⊂@.+@A⇡26
+
+# String ? Grid
+RLE ← ⌅(
+  $"_\n_!"⊃(
+    $"x = _, y = _"°˜⊟△
+  | /$"_$_"⍚(/$"__"⍚(⨬$"__"⋅$"_"⊸=₁)⊙(˜⊏RLEAlpha)°▽)
+  )
+| /$"__"▽¬∊"#x"⊸≡◇⊢°/$"_\n_"
+  ⍜▽≡⋅@.⊸=@b
+  ⍜▽≡⋅@A⊸=@o
+  ⬚@.≡(▽⊜(⍣⋕1°⊂⌟)⍜⇌\+⊸∊RLEAlpha°□)°/$"_$_"
+  ⨂RLEAlpha
+)
